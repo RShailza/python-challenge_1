@@ -62,8 +62,7 @@ print(f"Average Change: ${round(average_net_change,2)}")
 print(f'Greatest Increase in Profits: {count_months[list2.index(max(list2))]} (${max_list2})')
 print(f"Greatest Descrease in Profits: {count_months[list2.index(min(list2))]} (${min_list2})")
 
-# Write a csv text file with the results
-output_file = "Analysis/output.py"
+output_file = os.path.join("financial.txt")
 with open(output_file, "w", newline="") as datafile:
     csvwriter = csv.writer(datafile)
     csvwriter.writerow(["Financial Analysis"])
@@ -71,5 +70,5 @@ with open(output_file, "w", newline="") as datafile:
     csvwriter.writerow([f"Total Months: {total_months}"])
     csvwriter.writerow([f"Total: ${net_total}"])
     csvwriter.writerow([f"Average Change: ${round(average_net_change,2)}"])
-    csvwriter.writerow([f"Greatest Increase in Profits: {months[list2.index(max(list2))]} (${max_list2})"])
-    csvwriter.writerow([f"Greatest Decrease in Profits: {months[list2.index(min(list2))]} (${min_list2})"])
+    csvwriter.writerow([f"Greatest Increase in Profits: {count_months[list2.index(max(list2))]} (${max_list2})"])
+    csvwriter.writerow([f"Greatest Decrease in Profits: {count_months[list2.index(min(list2))]} (${min_list2})"])
